@@ -10,16 +10,18 @@ import {
 import 'react-native-get-random-values';
 import {v4 as uuidv4} from 'uuid';
 import RenderItem from './RenderItem';
-import api from './apis/apiCall';
+import {FetchData} from '../api/FetchData';
 
 const InsideScreen = ({navigation}) => {
   const [users, setUsers] = useState([]);
 
   const handlePress = () => {
     console.log('Pressed');
-    api.get('/').then(response => {
-      setUsers(usersSpread => [...usersSpread, response.data.results[0]]);
-    });
+    FetchData(setUsers);
+
+    // api.get('/').then(response => {
+    //   setUsers(usersSpread => [...usersSpread, response.data.results[0]]);
+    // });
   };
 
   return (
@@ -30,7 +32,7 @@ const InsideScreen = ({navigation}) => {
         }}
         style={Styles.imagebg}
         blurRadius={50}>
-        <Text style={Styles.textStyle}>Inside Screen</Text>
+        <Text style={Styles.textStyle}>Inside Screen 2</Text>
 
         <Button title=" Go Back " onPress={() => navigation.goBack()} />
 
@@ -65,7 +67,7 @@ const Styles = StyleSheet.create({
   render: {
     display: 'flex',
     flexDirection: 'row',
-    margin: 10, 
+    margin: 10,
     // borderWidth:5,
     // borderColor:'red',
     // borderRadius:50
@@ -76,9 +78,9 @@ const Styles = StyleSheet.create({
     paddingRight: 20,
     padding: 3,
   },
-  imagebg:{
-      flex:1
-  }
+  imagebg: {
+    flex: 1,
+  },
 });
 
 export default InsideScreen;
