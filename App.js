@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Button} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './src/components/HomeScreen';
@@ -7,6 +7,8 @@ import InsideScreen from './src/components/InsideScreen';
 import LoginScreen from './src/components/LoginScreen';
 import auth from '@react-native-firebase/auth';
 import {AuthContextProvider} from './src/contexts/AuthContextProvider';
+import HeaderButton from './src/components/HeaderButton';
+import TabHome from './src/components/TabHome';
 
 const Stack = createNativeStackNavigator();
 
@@ -40,8 +42,22 @@ const App = () => {
     <AuthContextProvider>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+            options={({navigation}) => ({
+              //    headerRightTitle: props => <HeaderButton />,
+              headerRight: () => (
+                <Button
+                  onPress={() => navigation.navigate('Inside')}
+                  title="Go Ahead"
+                  color="black"
+                />
+              ),
+            })}
+          />
           <Stack.Screen name="Inside" component={InsideScreen} />
+          <Stack.Screen name="TabHome" component={TabHome} />
         </Stack.Navigator>
       </NavigationContainer>
     </AuthContextProvider>

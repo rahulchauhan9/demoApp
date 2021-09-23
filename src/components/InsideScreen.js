@@ -32,7 +32,7 @@ const InsideScreen = ({navigation}) => {
         }}
         style={Styles.imagebg}
         blurRadius={50}>
-        <Text style={Styles.textStyle}>Inside Screen 2</Text>
+        <Text style={styles.textStyle}>Inside Screen 2</Text>
 
         <Button title=" Go Back " onPress={() => navigation.goBack()} />
 
@@ -54,7 +54,7 @@ const InsideScreen = ({navigation}) => {
   );
 };
 
-const Styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
