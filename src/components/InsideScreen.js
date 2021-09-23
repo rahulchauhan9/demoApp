@@ -32,7 +32,9 @@ const InsideScreen = ({navigation}) => {
         }}
         style={styles.imagebg}
         blurRadius={50}>
-        <Text style={styles.textStyle}>Inside Screen 2</Text>
+        <Text style={styles.textStyle}>
+          Inside Screen 2 DEvelop branch test
+        </Text>
 
         <Button title=" Go Back " onPress={() => navigation.goBack()} />
 
