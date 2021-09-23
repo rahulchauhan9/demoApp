@@ -434,7 +434,7 @@ PODS:
     - Firebase/Auth (= 8.7.0)
     - React-Core
     - RNFBApp
-  - RNScreens (3.7.2):
+  - RNScreens (3.6.0):
     - React-Core
     - React-RCTImage
   - Yoga (1.14.0)
@@ -656,7 +656,7 @@ SPEC CHECKSUMS:
   ReactCommon: eafed38eec7b591c31751bfa7494801618460459
   RNFBApp: b97d6654509a5852d49f0abf93be76b300fd2e2c
   RNFBAuth: 07fd836f31fe09d465c22476a052766251af1c49
-  RNScreens: 0591543e343c7444ea1756b6265d81a4295922c9
+  RNScreens: eb0dfb2d6b21d2d7f980ad46b14eb306d2f1062e
   Yoga: aa0cb45287ebe1004c02a13f279c55a95f1572f4
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
